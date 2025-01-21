@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <h1 onclick="clickMe()">click me</h1>
+        <p>Comment here: </p>
+
+
+        <p id="displayValue">if you click the click me button, you can see my value in the console</p>
+        <button onclick="btnClickMe()">click me</button>
+
+    </div>
+
+    <textarea name="" rows="5" cols="100" id="comment"></textarea><br>
+    <button id="btn">Post</button>
+
+
+    <script>
+
+        //simple onclick example
+
+        function clickMe() {
+            console.log('hi you pressed h1 tag')
+        }
+
+
+        // // get data from a element like, h1, p tag
+
+        function btnClickMe() {
+
+            const displayValue = document.getElementById('displayValue');
+            console.log(displayValue.innerText);
+
+        }
+
+
+        //get data from input user 
+        document.querySelector('#btn').addEventListener('click', function () {//add listener with button
+            const userComment = document.querySelector('#comment'); //catch the text from the text area
+            const userCommentValue = userComment.value; //get text from text area
+            const print = document.createElement('p'); // create element
+            print.innerText = userCommentValue;// set value to the element
+
+            const container = document.getElementById('container');//catch the container div
+            container.appendChild(print);// add the element with the parent div
+            userComment.value = ' '; //text area clear
+
+
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>
