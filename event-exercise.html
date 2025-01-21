@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="h1">secret value </h1>
+
+    <input type="text" id="pass">
+    <button id="btn" disabled> Delete</button>
+   
+
+
+    <script>
+
+
+        document.getElementById('pass').addEventListener('keyup', function(){
+             const pass = document.getElementById('pass');
+
+             const x = pass.value;
+             console.log(x);
+             const btn = document.getElementById('btn');
+             if(x === 'delete'){
+               
+                btn.removeAttribute('disabled');
+             }else{
+                btn.setAttribute('disabled',true);
+                
+             }
+             
+             
+            
+        })
+
+    </script>
+    
+</body>
+</html>
