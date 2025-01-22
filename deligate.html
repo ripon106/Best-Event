@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Delete item as you want </h1>
+    <ul id="parent">
+        <li class="item">Lorem ipsum dolor sit amet.</li>
+        <li class="item">Autem blanditiis et dignissimos culpa!</li>
+        <li class="item">Iusto facilis placeat aliquam sint?</li>
+        <li class="item">Nulla doloribus cumque quam hic!</li>
+        <li class="item">Ab inventore doloremque molestiae accusantium?</li>
+        <li class="item">Ab voluptatum natus ipsam asperiores.</li>
+    </ul>
+
+
+    <button id="btnNew">Add new Item</button>
+
+
+    <script>
+
+        const items = document.getElementById('parent');//get parent because if i add listner on parent the children will be added 
+
+           items.addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+           })
+         
+
+        document.getElementById('btnNew').addEventListener('click',function(){
+            const newElement = document.createElement('li');
+            newElement.innerText = 'I am new';
+            newElement.classList.add('item');
+            const parentUL = document.getElementById('parent');
+            parentUL.appendChild(newElement);
+
+        })
+
+
+    </script>
+    
+</body>
+</html>

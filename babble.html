@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- stop propagation -->
+
+    <!-- <section id="container" style="border: 1px solid rgb(98, 0, 255);">
+        <ul id="item-ul" style="border: 1px solid rgb(15, 0, 218);">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2" style="border: 1px solid red;">Ipsum dolor.</li>
+            <li id="item-3"> ipsum dolor sit.</li>
+            <li id="item-4">dolor sit amet.</li>
+            <li id="item-5">Amet consectetur.</li>
+        </ul>
+
+    </section>
+
+
+    <script>
+
+        document.getElementById('item-2').addEventListener('click', function(event){
+            event.stopPropagation();
+            console.log('item-2 is clicked');
+        })
+        document.getElementById('item-ul').addEventListener('click', function(){
+            console.log('item-ul is clicked');
+           
+        })
+        document.getElementById('container').addEventListener('click', function(){
+            console.log('container is clicked');
+        })
+
+    </script> -->
+
+    <!-- end stop propagation -->
+
+    <!-- stop immdiate propagation -->
+
+
+      <!-- stop propagation -->
+
+   <section id="container" style="border: 1px solid rgb(98, 0, 255);">
+        <ul id="item-ul" style="border: 1px solid rgb(15, 0, 218);">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2" style="border: 1px solid red;">Ipsum dolor.</li>
+            <li id="item-3"> ipsum dolor sit.</li>
+            <li id="item-4">dolor sit amet.</li>
+            <li id="item-5">Amet consectetur.</li>
+        </ul>
+
+    </section>
+
+
+    <script>
+
+       
+        document.getElementById('item-2').addEventListener('click', function(event){
+         
+            console.log('item-2 first is clicked');
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 second is clicked');
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 third is clicked');
+        })
+        document.getElementById('item-ul').addEventListener('click', function(){
+            console.log('item-ul is clicked');
+           
+        })
+        document.getElementById('container').addEventListener('click', function(){
+            console.log('container is clicked');
+        })
+
+    </script> 
+
+</body>
+</html>
